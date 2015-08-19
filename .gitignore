@@ -28,3 +28,6 @@ dist/
 node_modules/
 bower_components/
 client/lib
+
+# Secret mongo urls are secret
+config/*
