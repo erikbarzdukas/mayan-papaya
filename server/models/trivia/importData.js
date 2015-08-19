@@ -1,12 +1,11 @@
 var Trivia = require('./triviaModel');
 var data = require('./triviaData');
 var mongoose = require('mongoose');
-
+var mongoURI = require('../../../config/mongolab');
 /** 
  * Only need to do this if mongo is not already connected 
  * through app.js
  */
-mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/TriviaWithFriends';
 try {
   mongoose.connect(mongoURI);
 } catch (e) {
