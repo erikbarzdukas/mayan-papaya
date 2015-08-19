@@ -30,4 +30,4 @@ bower_components/
 client/lib
 
 # Secret mongo urls are secret
-config/*
+config/mongolab.js
