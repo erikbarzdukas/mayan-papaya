@@ -1,11 +1,10 @@
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
+var mongoURI = require('./config/mongolab');
 var app = express();
 
 require('./server/config/middleware.js')(app, express);
-
-mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/TriviaWithFriends';
 
 mongoose.connect(mongoURI);
 
