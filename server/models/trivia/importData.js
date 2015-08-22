@@ -1,6 +1,6 @@
 var Trivia = require('./triviaModel');
 var data1 = require('./triviaData');
-var data2 = require('./questions3'); 
+var data2 = require('./output');
 var mongoose = require('mongoose');
 
 
@@ -20,7 +20,7 @@ console.log("*--------------------------------------*");
 console.log("|          Beginning data import       |");
 console.log("*--------------------------------------*");
 
-for(var i = 0; data1[i] || data[2]; i++) {
+for(var i = 0; data1[i] || data2[i]; i++) {
 
   /** 
    * First 150 questions are in data1, rest
@@ -30,17 +30,17 @@ for(var i = 0; data1[i] || data[2]; i++) {
   if(i < 150) {
     data = data1;
   } else {
-    data = JSON.stringify(data2);
+    data = data2;
   }
 
   var question = new Trivia({
     id: i,
     question: data[i].question,
     content: data[i].content,
-    answer: data[i].correct,
+    answer: data[i].answer,
     level: data[i].level
   });
-  
+ 
   question.save()
 }
 
